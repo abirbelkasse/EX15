@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>examen de communication</h1>
+        <p>On veut écrire un algorithme qui calcule la moyenne de trois notes et d’afficher le résultat "Admis" ou "Non Admis" suivant que la moyenne est supérieur ou inférieur à 10</p>
+        <p>Quelles sont les variables nécessaires pour cette algorithme . Ecrire le code de l’algorithme . Compiler cette algorithme en utilisant le langage JavaScript</p><br>
+        <form action="">
+        <input type="text" class="txt" id="n1" placeholder="entrer la note français"> <br><br>
+        <input type="text" class="txt" id="n2" placeholder="entrer la note arabe"> <br><br>
+        <input onkeyup="valider()" type="text" class="txt" id="n3" placeholder="entrer la note english"> <br><br>
+        <!--<input type="button" value="valider" class="btn" onclick="valider()">-->
+        <br><br>
+        <h3 id="m"></h3><br>
+        <h3 id="r"></h3><br>
+    </form>
+    </div>
+</body>
+</html>
+<script>
+    function valider() {
+        var n1=parseFloat(document.getElementById('n1').value)
+        var n2=parseFloat(document.getElementById('n2').value)
+        var n3=parseFloat(document.getElementById('n3').value)
+        var m=(n1+n2+n3)/3
+        document.getElementById('m').innerHTML="la moyenne generale est :"+m
+        document.getElementById('m').style.border="2px solid green"
+        document.getElementById('m').style.color="green"
+        document.getElementById('m').style.padding="10px"
+        if(m>=10){
+            document.getElementById('r').innerHTML="eleve admis"
+            document.getElementById('r').style.border="2px solid green"
+            document.getElementById('r').style.color="green"
+        }else{
+            var rp="3ndek rattrapage f' :"
+            if(n1<10)rp+="Francais "
+            if(n2<10)rp+="arabe "
+            if(n3<10)rp+="anglais"
+            document.getElementById('r').innerHTML=rp
+            document.getElementById('r').style.border="2px solid red"
+            document.getElementById('r').style.color="red"
+        }
+    }
+</script>
